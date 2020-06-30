@@ -42,3 +42,6 @@
     </div>
   </div>
 </div><br><br>
+<script>
+app.init("${ctx}")
+</script>

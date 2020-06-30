@@ -6,16 +6,19 @@
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
     
+	<label for="UserID"><b>UserID</b></label>
+    <input id="userid" type="text" placeholder="Enter UserID" name="userid" required>
+
+    <label for="Passwd"><b>Password</b></label>
+    <input id="passwd" type="password" placeholder="Enter Password" name="passwd" required>
+    
+    <label for="Name"><b>Name</b></label>
+    <input id="name" type="text" placeholder="Enter Name" name="name" required>
+    
+    <label for="email"><b>Email</b></label>
+    <input id="email" type="text" placeholder="Enter Email" name="email" required>
+
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
@@ -24,10 +27,29 @@
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button id="signup_btn" type="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
-</form>    
+</form>   
+<script>
+$('#signup_btn').click(function(e){
+	e.preventDefault()
+	alert(`컨텍스트함 : ${ctx}`)
+	$.ajax({
+		url : `${ctx}/person/users`,
+		type : 'POST',
+		data : JSON.stringify(),
+		dataType : 'json',
+		contentType : 'application.json; charset=UTF-8',
+		success: function(res){
+			
+		},
+		error : function(err){
+			alert(err)
+		}
+	})
+})
+</script> 
  <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}

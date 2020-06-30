@@ -28,6 +28,6 @@
 <script>
 $('#a_join').click(function(e){
 	e.preventDefault
-	location.href= `${context}/user/join`
+	location.href= `${ctx}/user/join`
 })
 </script>
