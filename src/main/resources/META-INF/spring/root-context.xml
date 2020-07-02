@@ -41,4 +41,14 @@
 	<bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="basicDataSource"/>
 	</bean>
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+		<constructor-arg ref="sqlSessionFactoryBean"/>
+	</bean>
+	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+		<property name="maxUploadSize" value="10000000"/>
+		<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
+	<bean class="java.lang.String" id="string">
+		<constructor-arg value="C:\\Users\\junhwa\\eGov-3.9\\workspace\\board\\src\\main\\webapp\\resources\\img"/>
+	</bean>
 </beans>

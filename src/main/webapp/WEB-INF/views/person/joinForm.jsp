@@ -31,25 +31,18 @@
     </div>
   </div>
 </form>   
+<script src="${javascript}/store/person.js"></script>
 <script>
-$('#signup_btn').click(function(e){
+document.getElementById('signup_btn').addEventListener('click',function(e){
 	e.preventDefault()
-	alert(`컨텍스트함 : ${ctx}`)
-	$.ajax({
-		url : `${ctx}/person/users`,
-		type : 'POST',
-		data : JSON.stringify(),
-		dataType : 'json',
-		contentType : 'application.json; charset=UTF-8',
-		success: function(res){
-			
-		},
-		error : function(err){
-			alert(err)
-		}
-	})
+	person.init()
+	person.join({"userid": document.getElementById('userid').value,
+        		"passwd": document.getElementById('passwd').value,
+        		"name": document.getElementById('name').value,
+        		"email": document.getElementById('email').value
+        		})
 })
-</script> 
+</script>
  <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}

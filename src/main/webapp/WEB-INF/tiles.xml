@@ -13,6 +13,10 @@
     <definition name="*/*.tiles" extends="public">
     	<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
     </definition>
+    <definition name="*/*.user" extends="public">
+    	<put-attribute name="navigator" value="/WEB-INF/views/common/userNavigator.jsp"/>
+    	<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+    </definition>
     
     <!--no tiles--> 
     <definition name="noTiles" template="/WEB-INF/views/layouts/noTemplate.jsp">
